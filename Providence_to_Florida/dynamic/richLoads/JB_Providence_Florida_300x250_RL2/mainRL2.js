@@ -12,7 +12,7 @@ var tl;
 
 //@FT VARIABLE DECLARATIONS
 var deploy = true
-    showDefault=false,
+    showDefault=true,
     thisFeedLoaded=false,
     ctURL = "",
     defaultPrice = "",
@@ -140,7 +140,7 @@ function setupContent() {
     // -------------------
 
     if (showDefault) {
-      h4[0].innerHTML = 'Go from legroom to legrooooom with an<br>Even More<span class="asterisk">®</span> Space seat.'; // - Populates main headline
+      h4[0].innerHTML = 'Take the easy Rhode<br>to Florida.'; // - Populates main headline
       h4[0].classList.add('defaultEndframe')
       // reposition CTA
       cta[0].style.marginLeft = 0 
@@ -163,8 +163,8 @@ function setupContent() {
 
       if (myCityCharLength > 22) {
       } else if (myCityCharLength > 14) {
-        myCity[0].style.fontSize = "15px"
-        myCity[1].style.fontSize = "15px"
+        myCity[0].style.fontSize = "18px"
+        myCity[1].style.fontSize = "18px"
       } else if (myCityCharLength > 10) {
         myCity[0].style.fontSize = "17px"
         myCity[1].style.fontSize = "17px"

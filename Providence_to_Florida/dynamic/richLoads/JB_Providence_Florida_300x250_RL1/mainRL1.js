@@ -98,6 +98,8 @@ function init() {
 }
 
 function animate() {
+
+  window.parent.document.getElementById("border").style.borderColor="#000"
   tl.set(["#main_content"], { autoAlpha: 1, force3D: true });
 
   tl.set(['#h1, #h2'], {y:"20px"})
@@ -113,7 +115,7 @@ function animate() {
   // Plane animation running for entire duration
   tl.fromTo("#plane", totalDuration, { x: "-107px" }, { x: "0", ease: Power0.easeNone }, 0)
 
-  .addLabel('frame_END', "frame2+=4")
+  .addLabel('frame_END', "frame2+=6")
   .to("#term2", {autoAlpha: 0,}, 'frame_END')
   .to('#endframeBg', 0.6 ,{ top: 0, ease: Back.easeOut.config(.3)}, 'frame_END')
   .to('#terms1', 0.5, { autoAlpha: 0, ease: Power1.easeOut}, 'frame_END')
