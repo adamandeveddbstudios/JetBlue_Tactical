@@ -77,7 +77,7 @@ function setupContent() {
     // TESTING
 
     //  Longest possible places names
-    origin_formatted = 'Providence'
+    origin_formatted = 'Boston'
     destination_formatted = 'Florida'
 
     //  Longest possible places names
@@ -94,11 +94,11 @@ function setupContent() {
     // -------------------
 
     if (showDefault) {
-      h4[0].innerHTML = 'Take the easy Rhode<br>to Florida.'; // - Populates main headline
+      h4[0].innerHTML = 'More<br>ways<br>to that<br>Sunshine<br>State of<br>mind.'; // - Populates main headline
       h4[0].classList.add('defaultEndframe')
       // reposition CTA
       cta[0].style.marginLeft = 0 
-      cta[0].style.marginTop = "22px"
+      cta[0].style.marginTop = "0px"
       terms[0].innerHTML = '' // Populate Terms
 
       // Turn off Price holder etc.

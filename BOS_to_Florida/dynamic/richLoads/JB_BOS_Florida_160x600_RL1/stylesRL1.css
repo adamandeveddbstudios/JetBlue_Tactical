@@ -104,33 +104,33 @@ video {
 
 #endframeBg {
   position: absolute;
-  top: 170px;
+  top: 449px;
   height: 600px;
   width: 100%;
   background: #FFFFFF;
 }
 
 #pinkRibbon {
-  position: relative; 
-  top: 451px;
+  position: relative;
+  top: 0px;
   height: 10px;
-  width: 100%; 
+  width: 100%;
   background: #dc7bff;
 }
 
 #blueBottomCard {
   background-color: #0000aa;
   width: 160px;
-  height: 139px;
+  height: 141px;
   left: 0px;
   bottom: 0;
 }
 
 #logo {
-  width: 80px;
+  width: 95px;
   height: auto;
-  left: 41px;
-  bottom: 95px;
+  left: 33px;
+  bottom: 71px;
   position: absolute;
   z-index: 11;
 }

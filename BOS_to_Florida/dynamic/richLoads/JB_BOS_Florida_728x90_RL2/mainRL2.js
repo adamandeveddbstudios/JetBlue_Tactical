@@ -52,7 +52,6 @@ function checkURL(u){
   }
 }
 
-
 function setupContent() {
 
   if (deploy === false) {
@@ -95,11 +94,11 @@ function setupContent() {
     // -------------------
 
     if (showDefault) {
-      h4[0].innerHTML = 'More ways<br>to that<br>Sunshine<br>State of<br>mind.'; // - Populates main headline
+      h4[0].innerHTML = 'More ways to that<br>Sunshine State of mind.'; // - Populates main headline
       h4[0].classList.add('defaultEndframe')
       // reposition CTA
       cta[0].style.marginLeft = 0 
-      cta[0].style.marginTop = "0px"
+      cta[0].style.marginTop = "12px"
       terms[0].innerHTML = '' // Populate Terms
 
       // Turn off Price holder etc.
@@ -118,14 +117,14 @@ function setupContent() {
 
       if (myCityCharLength > 22) {
       } else if (myCityCharLength > 14) {
-        myCity[0].style.fontSize = "25px"
-        myCity[1].style.fontSize = "25px"
+        myCity[0].style.fontSize = "14px"
+        myCity[1].style.fontSize = "14px"
       } else if (myCityCharLength > 10) {
         myCity[0].style.fontSize = "17px"
         myCity[1].style.fontSize = "17px"
       } else {
-        myCity[0].style.fontSize = "30px"
-        myCity[1].style.fontSize = "30px"
+        myCity[0].style.fontSize = "19px"
+        myCity[1].style.fontSize = "19px"
       }
 
     }
@@ -151,6 +150,7 @@ function setupContent() {
   myFT.dispatch('RL2_ready_to_play');
 
 }
+
 //@FT Listener function for the custom dispatched event "theFeedLoaded")" (from base file)
 // 'theFeedLoaded' contains the feed data
 myFT.on('theFeedLoaded', function(e) {
@@ -163,7 +163,6 @@ function feedLoaded(feed){
   if(!thisFeedLoaded){
     thisFeedLoaded=true;
     try{
-
         lowestfare_faredollaramount = feed[0].lowestfare_faredollaramount;
         origin_formatted = feed[0].origin_formatted;
         destination_formatted = feed[0].destination_formatted;
@@ -198,6 +197,7 @@ function init() {
   // startTime = new Date();
   // Set Global Timeline
   tl = new TimelineMax({ onComplete: endTime });
+  tl.set(['#terms2'], {autoAlpha: 0 });
   animate();
   setRollover();
 
@@ -209,6 +209,7 @@ function animate() {
   .addLabel('frame_4')
   // .from(['#main_content'], .6, { y:"+=250", ease: Back.easeOut.config(.3)})
   .staggerTo(['#h4', '#priceHolder', '#cta', '#terms', '#terms_container'], 0.5, { autoAlpha: 1, ease: Power1.easeInOut }, 0.3, 'frame_4')
+    
 }
 
 

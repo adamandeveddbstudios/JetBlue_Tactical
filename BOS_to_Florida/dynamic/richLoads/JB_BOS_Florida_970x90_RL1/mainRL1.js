@@ -45,10 +45,7 @@ myFT.on('instantads',function(){
     called 'theFeedLoaded'.
     */
     function feedLoaded(feedItems) {
-      // adjust logo size and positioning for partner logo
-      // change includes to be simple if(partner_logo_src=="n/a") and follow same logic below
-
-      let partner_logo_src = feedItems[0].image_logo_300x250;
+      let partner_logo_src = feedItems[0].image_logo_728x250;
 
       //testing swap between layouts for partner logo
       partner_logo_src = './images/partner_logo.png'
@@ -57,9 +54,9 @@ myFT.on('instantads',function(){
         //no partner logo included in feed, do nothing
       }else{
         //partner logo included in feed
-        console.log('partner logo included!')
+        // console.log('partner logo included!')
         // document.getElementById('logoHolder').style.justifyContent = 'space-between'
-        // document.getElementById('partner_logo_container').style.width = '65px'
+        // document.getElementById('partner_logo_container').style.width = '116px'
 
 
         // var partner_logo_img = myFT.$("#partner_logo_img");
@@ -108,9 +105,11 @@ function init() {
 function animate() {
   //make parent (base file) border black
   window.parent.document.getElementById("border").style.borderColor="#000"
+
   tl.set(["#main_content"], { autoAlpha: 1, force3D: true });
 
   tl.set(['#h1, #h2'], {y:"20px"})
+
   tl.addLabel('frame1', 0)
   .to('#h1', 0.5, { autoAlpha: 1, y: "0", ease: Power1.easeOut}, 'frame1+=0.5')
   
@@ -118,14 +117,15 @@ function animate() {
   .to('#h1', 0.5, { autoAlpha: 0, y: "20px", ease: Power1.easeOut }, "frame2")
   .to('#h2', 0.5, { autoAlpha: 1, y: "0", ease: Power1.easeOut }, "frame2+=0.5")
 
-  .addLabel('frame_END', "frame2+=6")
-  .to('#endframeBg', 0.6 ,{ top: 0, ease: Back.easeOut.config(.3)}, 'frame_END')
 
-  //////////////////////////////////////
-  // @FT2 code block start
-  .call(playEndframe, ["param1"], 'frame_END')
-  // @FT2 code block end
-  ////////////////////////////////////////
+  tl.addLabel('frame_END', 'frame2+=6')    
+  .to('#endframeBg', 0.6 ,{ left: 0, ease: Back.easeOut.config(.3)}, 'frame_END')
+
+    ////////////////////////////////////////
+    //@FT2 code block start
+    .call(playEndframe, ["param1"], 'frame_END')
+    //@FT2 code block end
+    ////////////////////////////////////////
 
 
 }
@@ -137,6 +137,17 @@ function playEndframe(param1){
 //@FT3 code block end
 ////////////////////////////////////////
 
+function buildingAnimation () {
+  const tl = new TimelineMax({ repeat: 5 });
+
+  tl.to('#bubbles-1', 0, { autoAlpha: 1 }, 0)
+  .to('#bubbles-1', 0, { autoAlpha: 0 }, 0.25)
+  .to('#bubbles-2', 0, { autoAlpha: 1 }, 0.25)
+  .to('#bubbles-2', 0, { autoAlpha: 0 }, 0.5)
+  .to('#bubbles-3', 0, { autoAlpha: 1 }, 0.5)
+  .to('#bubbles-3', 0, { autoAlpha: 0 }, 0.75)
+  .to('#bubbles-1', 0, { autoAlpha: 1 }, 0.75)
+}
 
 
 // CTA grow on hover
@@ -167,7 +178,6 @@ myFT.on('stopTimer',function(){
 
 //@FT4 code block end
 ////////////////////////////////////////
-
 const d = new Date();
 let year = d.getFullYear();
 document.getElementById("year").innerHTML = year;
